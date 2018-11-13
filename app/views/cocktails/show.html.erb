@@ -1,0 +1,40 @@
+<h1><%= @cocktail.name %></h1>
+<%= link_to 'Home', cocktails_path %>
+
+<div class="container-show">
+  <div class="recipe">
+    <h2>Recipe</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ingredient</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @doses.each do |dose| %>
+        <tr>
+          <td><%= dose.ingredient.name %></td>
+          <td><%= dose.description %></td>
+          <td><%= link_to 'Delete', dose_path(dose), method: :delete %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="create-dose">
+    <h2>Add a new dose</h2>
+    <%= render 'doses/new' %>
+  </div>
+</div>
+
+
+<div class="reviews">
+<% @reviews.each do |review| %>
+<%= review.content %>
+<% end %>
+</div>
+
+
+<%= render 'reviews/new' %>

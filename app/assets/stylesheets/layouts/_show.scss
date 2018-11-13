@@ -1,0 +1,19 @@
+.container-show {
+  display: flex;
+  flex: 0 0 40%;
+  justify-content: space-around;
+}
+
+
+th {
+  font-weight: thick;
+}
+
+
+th, td {
+    border: 1px solid black;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    padding: 8px;
+}
